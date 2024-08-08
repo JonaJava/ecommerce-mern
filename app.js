@@ -25,9 +25,11 @@ app.use(express.static(path.resolve(__dirname,'build')))
 app.use(cookieParser());// se utiliza para analizar y manejar las cookies que se envían desde el cliente hasta el servidor.
 app.use(bodyParser.json());
 app.use(cors({
+  origin:["ecommerce-mern-azure-phi.vercel.app"
+  ],
+  methods:["POST","GET"],
     exposedHeaders:['X-Total-Count'],
-   /*  origin: 'http://localhost:3000',//comunicacion entre servidores
-    credentials: true */
+   
 }));
 
 app.use("/product", Product); 
