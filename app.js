@@ -21,7 +21,7 @@ const path = require('path')
 //funciona en toda la aplicacion
 //middlewares
 app.use(express.json());//convertido a json req.body
-app.use(express.static(path.join(__dirname,'build')))
+app.use(express.static(path.resolve(__dirname,'build')))
 app.use(cookieParser());// se utiliza para analizar y manejar las cookies que se envían desde el cliente hasta el servidor.
 app.use(bodyParser.json());
 app.use(cors({
