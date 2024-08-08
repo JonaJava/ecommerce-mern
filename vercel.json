@@ -1,82 +1,47 @@
 {
     "builds": [
       {
-        "src": "app.js",
+        "src": "build/app.js",
         "use": "@vercel/node"
       },
       {
-        "src": "build/**",
+        "src": "build/**/*",
         "use": "@vercel/static"
       }
     ],
   
-    "routes":[
-        {
-            "src":"/product",
-            "dest":"app.js"
-        },
-        {
-            "src":"/product/(.*)",
-            "dest":"app.js"
-        },
-        {
-            "src":"/category",
-            "dest":"app.js"
-        },
-        {
-            "src":"/category/(.*)",
-            "dest":"app.js"
-        },
-        {
-            "src":"/brand",
-            "dest":"app.js"
-        },
-        {
-            "src":"/brand/(.*)",
-            "dest":"app.js"
-        },
-        {
-            "src":"/user",
-            "dest":"app.js"
-        },
-        {
-            "src":"/user/(.*)",
-            "dest":"app.js"
-        },
-        {
-            "src":"/cart",
-            "dest":"app.js"
-        },
-        {
-            "src":"/cart/(.*)",
-            "dest":"app.js"
-        },
-        {
-            "src":"/orders",
-            "dest":"app.js"
-        },
-        {
-            "src":"/orders/(.*)",
-            "dest":"app.js"
-        },
-        
-        {
-            "src":"/auth",
-            "dest":"app.js"
-        },
-        {
-            "src":"/auth/(.*)",
-            "dest":"app.js"
-        },
-        {
-            "src":"/",
-            "dest":"build/index.html"
-        },
-        {
-            "src":"/(.+)",
-            "dest":"build/$1"
-        }
-        
-        
-    ]
+   "routes": [
+    {
+      "src": "/product/(.*)",
+      "dest": "/build/app.js"
+    },
+    {
+      "src": "/brand/(.*)",
+      "dest": "/build/app.js"
+    },
+    {
+      "src": "/category/(.*)",
+      "dest": "/build/app.js"
+    },
+    {
+      "src": "/user/(.*)",
+      "dest": "/build/app.js"
+    },
+    {
+      "src": "/cart/(.*)",
+      "dest": "/build/app.js"
+    },
+    {
+      "src": "/orders/(.*)",
+      "dest": "/build/app.js"
+    },
+    {
+      "src": "/auth/(.*)",
+      "dest": "/build/app.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/$1"
+    }
+  ]
   }
