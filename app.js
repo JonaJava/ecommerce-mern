@@ -21,7 +21,7 @@ const path = require('path')
 //funciona en toda la aplicacion
 //middlewares
 app.use(express.json());//convertido a json req.body
-app.use(express.static(path.resolve(__dirname,'build')))
+app.use(express.static(path.join(__dirname,'build')))
 app.use(cookieParser());// se utiliza para analizar y manejar las cookies que se envían desde el cliente hasta el servidor.
 app.use(bodyParser.json());
 app.use(cors({
@@ -30,13 +30,13 @@ app.use(cors({
     credentials: true */
 }));
 
-app.use("/api/product", Product); 
- app.use("/api/brand",Brand);
-app.use("/api/category", Category);
-app.use("/api/user", User);
-app.use("/api/cart", Cart);
- app.use("/api/orders",Orders);
-app.use("/api/auth", Auth);
+app.use("/product", Product); 
+ app.use("/brand",Brand);
+app.use("/category", Category);
+app.use("/user", User);
+app.use("/cart", Cart);
+ app.use("/orders",Orders);
+app.use("/auth", Auth);
 
 // Manejo de rutas no encontradas
 app.use((req, res) => {
