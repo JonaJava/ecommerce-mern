@@ -1,47 +1,28 @@
 {
+    "version": 2,
     "builds": [
       {
         "src": "build/app.js",
         "use": "@vercel/node"
       },
       {
-        "src": "build/**/*",
+        "src": "build/static/**/*",
         "use": "@vercel/static"
       }
     ],
-  
-   "routes": [
-    {
-      "src": "/product/(.*)",
-      "dest": "/build/app.js"
-    },
-    {
-      "src": "/brand/(.*)",
-      "dest": "/build/app.js"
-    },
-    {
-      "src": "/category/(.*)",
-      "dest": "/build/app.js"
-    },
-    {
-      "src": "/user/(.*)",
-      "dest": "/build/app.js"
-    },
-    {
-      "src": "/cart/(.*)",
-      "dest": "/build/app.js"
-    },
-    {
-      "src": "/orders/(.*)",
-      "dest": "/build/app.js"
-    },
-    {
-      "src": "/auth/(.*)",
-      "dest": "/build/app.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/$1"
-    }
-  ]
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/build/app.js"
+      },
+      {
+        "src": "/static/(.*)",
+        "dest": "/build/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/build/$1"
+      }
+    ]
   }
+  
