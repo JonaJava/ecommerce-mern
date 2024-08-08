@@ -69,7 +69,7 @@
     },
     {
         "src": "/",
-        "dest": "app.js"
+        "dest": "build/index.js"
       },
     {
       "src": "/(.*)",
