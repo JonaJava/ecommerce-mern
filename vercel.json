@@ -11,21 +11,18 @@
     }
   ],
   "routes": [
-   
+    {
+      "src": "/(product|brand|category|user|cart|orders|auth)(.*)",
+      "dest": "/app.js"
+    },
     {
       "src": "/",
       "dest": "/build/index.html"
     },
-  
     {
-      "src": "/(.*)",
-      "dest": "/build/$1",
-      "methods": ["GET", "HEAD"]
-    },
-   
-    {
-      "src": "/(product|brand|category|user|cart|orders|auth)(.*)",
-      "dest": "app.js"
+      "src": "/static/(.*)",
+      "dest": "/build/static/$1"
     }
   ]
 }
+
