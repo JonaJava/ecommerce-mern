@@ -1,5 +1,5 @@
 const express = require('express')
-const{createOrder,fetchOrdersByUser, deleteOrder, updateOrder, fetchAllOrders,createPreference} = require('../controllers/Order/Order')
+const{createOrder,fetchOrdersByUser, deleteOrder, updateOrder, fetchAllOrders,createPreference} = require('../controllers/order/Order')
 const authRequired = require("../middlewares/validateToken");
 
 

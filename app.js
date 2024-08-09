@@ -31,7 +31,7 @@ const corsConfig ={
    credential:true
 }
 
-app.options("", cors(corsConfig))
+
 app.use(cors(corsConfig));
 app.use("/product", Product); 
  app.use("/brand",Brand);
