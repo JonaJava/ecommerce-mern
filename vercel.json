@@ -11,18 +11,18 @@
     }
   ],
   "routes": [
-    // Ruta para servir el archivo index.html
+   
     {
       "src": "/",
       "dest": "/build/index.html"
     },
-    // Ruta para servir otros archivos estáticos
+  
     {
       "src": "/(.*)",
       "dest": "/build/$1",
       "methods": ["GET", "HEAD"]
     },
-    // Ruta para manejar solicitudes API
+   
     {
       "src": "/(product|brand|category|user|cart|orders|auth)(.*)",
       "dest": "app.js"
