@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.js",
+      "src": "./app.js",
       "use": "@vercel/node"
     },
     {
@@ -13,19 +13,16 @@
   "routes": [
     {
       "src": "/(product|brand|category|user|cart|orders|auth)(.*)",
-      "dest": "/app.js"
+      "dest": "app.js"
     },
     {
       "src": "/",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/build/static/$1"
+      "dest": "build/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/build/$1"
+      "dest": "/build/$1",
+      "methods": ["POST", "GET", "PATCH", "PUT", "DELETE", "OPTIONS"]
     }
   ]
 }
